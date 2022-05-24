@@ -1,0 +1,155 @@
+html {
+  color: #1d394b;
+  font-size: 1em;
+  line-height: 1.4;
+  font-family: sans-serif;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  border: 0;
+  border-top: 3px solid #1d394b;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+.left-align{
+  display: inline-block;
+  float: left;
+}
+
+.right-align{
+  display: inline-block;
+  margin-right: 10px;
+  float: right;
+}
+
+.center-align{
+  display: block;
+  text-align: center;
+}
+
+pagination input{
+  width: 40px;
+}
+pagination{
+  margin-top: -10px;
+}
+
+.search-head{
+  padding: 5px 0px 5px 5px;
+  margin-top: 5px;
+  background-color: #1d394b;
+  color: #fff;
+  width: 100%;
+}
+
+.search-head table tr td input{
+  width: 90%;
+}
+.search-head table tr th{
+  text-align: left;
+  font-size: 10px;
+  font-weight: bold;
+  width: 200px;
+}
+
+header div button {
+  background-color: #1d394b;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.table-data{
+  color: #1d394b;
+  background-color: #fff;
+}
+
+.arrow {
+  margin: auto 5px;
+}
+
+.fields{
+  padding: 5px 0px 5px 5px;
+  color: #fff;
+  width: 100%;
+}
+
+.fields table tr td{
+  color: #000;
+  text-align: left;
+  font-size: 10px;
+  width: 200px;
+  padding-left: 10px;
+}

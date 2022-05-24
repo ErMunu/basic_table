@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>KT Task</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+<header>
+  <div class="left-align">
+    <h4>Search: Stock Lots</h4>
+  </div>
+  <div class="right-align">
+    <button>Settings</button>
+    <button>Edit</button>
+    <button><img src="assets/img/preview.svg" height="16"></button>
+    <button><img src="assets/img/search.svg" height="16"></button>
+  </div>
+  <div class="clearfix"></div>
+  <hr>
+  <pagination class="center-align">
+    <span>Page</span>
+    <input id="current-page" type="number" min="1" >
+    <span>with</span>
+    <input id="total-pages" type="number" disabled>
+    <span>records per page</span>
+    <span class="arrow right-align"><img src="assets/img/angle-right.svg" height="25"></span>
+    <span class="arrow right-align"><img src="assets/img/angle-left.svg" height="25"></span>
+  </pagination>
+</header>
+<main>
+  <div class="search-head">
+    <table>
+      <tr>
+        <th><label for="subsidiary">Subsidiary</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+        <th><label for="warehouse">Warehouse</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+        <th><label for="our-referentie">Our Referentie</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+        <th><label for="product">Product</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+        <th><label for="warehouse-reference">Warehouse Reference</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+        <th><label for="remarks">Remarks</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+        <th><label for="supplier-reference">Supplier Reference</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+        <th><label for="relation">Relation</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+        <th><label>Quantity</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+        <th><label>Expiry date</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+        <th><label>Purchase date</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+      </tr>
+
+      <tr>
+        <td><input id="subsidiary"></td>
+        <td><input id="warehouse"></td>
+        <td><input id="our-referentie"></td>
+        <td><input id="product"></td>
+        <td><input id="warehouse-reference"></td>
+        <td><input id="remarks"></td>
+        <td><input id="supplier-reference"></td>
+        <td><input id="relation"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <div class="fields">
+    <table id="data">
+    </table>
+  </div>
+</main>
+<footer>
+
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+
+</html>
