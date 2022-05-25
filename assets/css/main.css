@@ -153,3 +153,10 @@ header div button {
   width: 200px;
   padding-left: 10px;
 }
+
+#total-pages, #current-page {
+  color: black;
+  border: 1px solid #010101;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}

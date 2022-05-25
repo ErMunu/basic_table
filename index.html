@@ -23,12 +23,12 @@
   <hr>
   <pagination class="center-align">
     <span>Page</span>
-    <input id="current-page" type="number" min="1" >
+    <input id="current-page" type="number" aria-valuemin="1" >
     <span>with</span>
     <input id="total-pages" type="number" disabled>
     <span>records per page</span>
-    <span class="arrow right-align"><img src="assets/img/angle-right.svg" height="25"></span>
-    <span class="arrow right-align"><img src="assets/img/angle-left.svg" height="25"></span>
+    <span class="arrow right-align" id="upKey" ><img src="assets/img/angle-right.svg" height="25" alt="up"></span>
+    <span class="arrow right-align" id="downKey" ><img src="assets/img/angle-left.svg" height="25" alt="down"></span>
   </pagination>
 </header>
 <main>
