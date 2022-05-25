@@ -4,20 +4,19 @@ const tableElement = document.getElementById("data");
 
 for(let i=0; i<10000; i++){
     let date = new Date();
-    tableData.push(
-        "<tr >"+
-            "<td>alpha"+ i +"</td>"+
-            "<td>dutch"+ i +"</td>"+
-            "<td>ref12"+ i +"</td>"+
-            "<td>apple"+ i +"</td>"+
-            "<td>wr"+ i +"</td>"+
-            "<td>good thing"+ i +"</td>"+
-            "<td>sr"+ i +"</td>"+
-            "<td>complicated"+ i +"</td>"+
-            "<td>"+ Math.round(Math.random()*1000) +" kg</td>"+
-            "<td>"+ date.getDate() + "-" + date.getMonth() + "-" + (date.getFullYear() + i) +"</td>"+
-            "<td>"+ date.getDate() + "-" + date.getMonth() + "-" + (date.getFullYear() - i) +"</td>"+
-        "</tr>"
+    tableData.push({
+            subsidiary : "alpha"+ i ,
+            warehouse : "dutch"+ i,
+            oruRef : "ref12"+ i,
+            product : "apple"+ i,
+            warehouseRef : "wr"+ i,
+            remarks : "good thing"+ i,
+            supRef : "sr"+ i,
+            relation : "complicated"+ i,
+            quantity : Math.round(Math.random()*1000) +" kg",
+            expiry : date.getDate() + "-" + date.getMonth() + "-" + (date.getFullYear() + i),
+            purchase : date.getDate() + "-" + date.getMonth() + "-" + (date.getFullYear() - i)
+        }
     );
 }
 
@@ -39,7 +38,12 @@ function writeLines(){
     tableElement.innerHTML = "";
     for(let i = linesPerPage * (currentPage.value - 1) ; i < linesPerPage * currentPage.value ; i++) {
         const line = document.createElement('tr');
-        line.innerHTML = tableData[i];
+        let lineData = '';
+        for (let tableDatumKey in tableData[i]) {
+            lineData += "<td>" + tableData[i][tableDatumKey] + "</td>" ;
+        }
+        line.innerHTML = lineData;
+        console.log(tableData[i]);
         tableElement.appendChild(line);
     }
 }
