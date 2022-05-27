@@ -1,46 +1,38 @@
 "use strict";
-let tableData = [];
-const tableElement = document.getElementById("data");
-
-for(let i=0; i<10000; i++){
-    let date = new Date();
-    tableData.push({
-            subsidiary : "alpha"+ i ,
-            warehouse : "dutch"+ i,
-            oruRef : "ref12"+ i,
-            product : "apple"+ i,
-            warehouseRef : "wr"+ i,
-            remarks : "good thing"+ i,
-            supRef : "sr"+ i,
-            relation : "complicated"+ i,
-            quantity : Math.round(Math.random()*1000) +" kg",
-            expiry : date.getDate() + "-" + date.getMonth() + "-" + (date.getFullYear() + i),
-            purchase : date.getDate() + "-" + date.getMonth() + "-" + (date.getFullYear() - i)
-        }
-    );
-}
-
-let tempData = tableData;
+let tableData;
+let tempData;
+let totalPages
 const linesPerPage = 40;
-let totalPages = tableData.length/linesPerPage;
-document.getElementById('total-pages').value= parseInt(totalPages.toString()).toString();
+
+async function getJSON(path, callback) {
+    return callback(await fetch(path).then(r => r.json()));
+}
+getJSON('assets/data.json', info => tableData = info).then(r => intiateRender());
+
+const tableElement = document.getElementById("data");
 let currentPage = document.getElementById('current-page');
 let upKey = document.getElementById('upKey');
 let downKey = document.getElementById('downKey');
-let  sortSubsidiary = document.getElementById('sortSubsidiary');
+let  sortLists = document.getElementsByClassName('sortList');
 let  searchField = document.getElementsByClassName('search');
-
-currentPage.value = "1";
-writeLines();
 
 currentPage.addEventListener('change', writeLines);
 upKey.addEventListener('click', updateCurrentPage);
 downKey.addEventListener('click', updateCurrentPage);
-sortSubsidiary.addEventListener('click', sort);
 for (let i = 0; i < searchField.length; i++) {
     searchField[i].addEventListener('change', search);
 }
+for (let i = 0; i < sortLists.length; i++) {
+    sortLists[i].addEventListener('click', sortList);
+}
 
+function intiateRender(){
+    tempData = tableData;
+    totalPages = tableData.length/linesPerPage;
+    document.getElementById('total-pages').value= parseInt(totalPages.toString()).toString();
+    currentPage.value = "1";
+    writeLines();
+}
 
 function writeLines(){
     totalPages = Math.ceil(tableData.length/linesPerPage);
@@ -65,15 +57,22 @@ function updateCurrentPage(event) {
     writeLines();
 }
 
-function sort() {
-    tableData.reverse();
+function sortList(event) {
+    let field = event.target.id.slice(5);
+    if(event.target.sort === "asc"){
+        tableData.sort((a, b) => (a[field] < b[field]) ? 1 : -1)
+        event.target.sort = "desc";
+    } else {
+        tableData.sort((a, b) => (a[field] > b[field]) ? 1 : -1)
+        event.target.sort = "asc";
+    }
     writeLines();
 }
 
 function search(event) {
-    tableData = tempData.filter(function (key) {
+    tableData = tempData.filter(function (obj) {
         let field = event.target.id;
-        return key[field].includes(event.target.value);
+        return obj[field]?.includes(event.target.value);
     });
     writeLines();
 }

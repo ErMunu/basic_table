@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>KT Task</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/img/rocket.svg">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -35,27 +36,27 @@
   <div class="search-head">
     <table>
       <tr>
-        <th><label for="subsidiary">Subsidiary</label><img src="assets/img/sort.svg" height="12" class="right-align" id="sortSubsidiary"></th>
-        <th><label for="warehouse">Warehouse</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
-        <th><label for="our-referentie">Our Referentie</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
-        <th><label for="product">Product</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
-        <th><label for="warehouse-reference">Warehouse Reference</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
-        <th><label for="remarks">Remarks</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
-        <th><label for="supplier-reference">Supplier Reference</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
-        <th><label for="relation">Relation</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
-        <th><label>Quantity</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
-        <th><label>Expiry date</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
-        <th><label>Purchase date</label><img src="assets/img/sort.svg" height="12" class="right-align"></th>
+        <th><label for="subsidiary">Subsidiary</label><img src="assets/img/sort.svg" height="12" class="right-align sortList" id="sort_subsidiary" sort="asc"></th>
+        <th><label for="warehouse">Warehouse</label><img src="assets/img/sort.svg" height="12" class="right-align sortList" id="sort_warehouse" sort="asc"></th>
+        <th><label for="ourRef">Our Referentie</label><img src="assets/img/sort.svg" height="12" class="right-align sortList" id="sort_ourRef" sort="asc"></th>
+        <th><label for="product">Product</label><img src="assets/img/sort.svg" height="12" class="right-align sortList" id="sort_product" sort="asc"></th>
+        <th><label for="warRef">Warehouse Reference</label><img src="assets/img/sort.svg" height="12" class="right-align sortList" id="sort_warRef" sort="asc"></th>
+        <th><label for="remarks">Remarks</label><img src="assets/img/sort.svg" height="12" class="right-align sortList" id="sort_remarks" sort="asc"></th>
+        <th><label for="supRef">Supplier Reference</label><img src="assets/img/sort.svg" height="12" class="right-align sortList" id="sort_supRef" sort="asc"></th>
+        <th><label for="relation">Relation</label><img src="assets/img/sort.svg" height="12" class="right-align sortList" id="sort_relation" sort="asc"></th>
+        <th><label>Quantity</label><img src="assets/img/sort.svg" height="12" class="right-align sortList" id="sort_quantity" sort="asc"></th>
+        <th><label>Expiry date</label><img src="assets/img/sort.svg" height="12" class="right-align sortList" id="sort_expiryDate" sort="asc"></th>
+        <th><label>Purchase date</label><img src="assets/img/sort.svg" height="12" class="right-align sortList" id="sort_purchaseDate" sort="asc"></th>
       </tr>
 
       <tr>
         <td><input id="subsidiary" class="search"></td>
         <td><input id="warehouse" class="search"></td>
-        <td><input id="oruRef" class="search"></td>
+        <td><input id="ourRef" class="search"></td>
         <td><input id="product" class="search"></td>
-        <td><input id="warehouse-reference" class="search"></td>
+        <td><input id="warRef" class="search"></td>
         <td><input id="remarks" class="search"></td>
-        <td><input id="supplier-reference" class="search"></td>
+        <td><input id="supRef" class="search"></td>
         <td><input id="relation" class="search"></td>
         <td></td>
         <td></td>
